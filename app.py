@@ -22,7 +22,7 @@ def home():
    logger.debug("debug 0")
    logger.info("info 1")
    logger.warning("warning 1")
-   logger.error("error 1")
+   logger.error("[ERROR] error 1")
    logger.critical("critical 1")
    logger.info("info 2")
    logger.debug("debug 1")

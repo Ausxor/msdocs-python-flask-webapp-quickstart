@@ -5,6 +5,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+   return redirect("/home/")
+
+@app.route('/home')
+def index():
    print('Request for index page received')
    return render_template('index.html')
 

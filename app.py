@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-   return redirect("/home/")
+   return redirect("/home")
 
 @app.route('/home')
 def home():

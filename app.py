@@ -8,7 +8,7 @@ def index():
    return redirect("/home/")
 
 @app.route('/home')
-def index():
+def home():
    print('Request for index page received')
    return render_template('index.html')
 

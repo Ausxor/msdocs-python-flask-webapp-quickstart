@@ -1,7 +1,17 @@
 from datetime import datetime
+import logging
+import sys
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 app = Flask(__name__)
 
+# Acquire the logger for a library (azure.mgmt.resource in this example)
+logger = logging.getLogger('mylog')
+
+# Set the desired logging level
+logger.setLevel(logging.DEBUG)
+
+handler = logging.StreamHandler(stream=sys.stdout)
+logger.addHandler(handler)
 
 @app.route('/')
 def index():
@@ -9,7 +19,14 @@ def index():
 
 @app.route('/home')
 def home():
-   print('Request for index page received')
+   logger.debug("debug 0")
+   logger.info("info 1")
+   logger.warning("warning 1")
+   logger.error("error 1")
+   logger.critical("critical 1")
+   logger.info("info 2")
+   logger.debug("debug 1")
+   logger.debug("debug 2")
    return render_template('index.html')
 
 @app.route('/favicon.ico')
